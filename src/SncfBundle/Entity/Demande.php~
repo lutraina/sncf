@@ -1,0 +1,128 @@
+<?php
+
+namespace SncfBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Demande
+ *
+ * @ORM\Table(name="demande")
+ * @ORM\Entity(repositoryClass="SncfBundle\Repository\DemandeRepository")
+ */
+class Demande
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="Number", type="integer", unique=true)
+     */
+    private $number;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="demande_description", type="text")
+     */
+    private $demandeDescription;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set number
+     *
+     * @param integer $number
+     *
+     * @return Demande
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return int
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Demande
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set demandeDescription
+     *
+     * @param string $demandeDescription
+     *
+     * @return Demande
+     */
+    public function setDemandeDescription($demandeDescription)
+    {
+        $this->demandeDescription = $demandeDescription;
+
+        return $this;
+    }
+
+    /**
+     * Get demandeDescription
+     *
+     * @return string
+     */
+    public function getDemandeDescription()
+    {
+        return $this->demandeDescription;
+    }
+}
+

@@ -1,3 +1,11 @@
+sncf_demande:
+    resource: "@SncfBundle/Controller/DemandeController.php"
+    type:     annotation
+
+sncf:
+    resource: "@SncfBundle/Resources/config/routing.yml"
+    prefix:   /
+
 demande:
     resource: "@DemandeBundle/Controller/"
     type:     annotation
