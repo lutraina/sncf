@@ -1,0 +1,2 @@
+# sncf
+<?php phpinfo(); ?>

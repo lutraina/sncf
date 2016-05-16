@@ -1,2 +1,47 @@
 {% extends '::base.html.twig' %}
 
+{% block demandes_show %}
+ 
+    <h1>Demande list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Number</th>
+                <th>Nom</th>
+                <th>Demandedescription</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demande in demandes %}
+            <tr>
+                <td><a href="{{ path('demandes_show', { 'id': demande.id }) }}">{{ demande.id }}</a></td>
+                <td>{{ demande.number }}</td>
+                <td>{{ demande.nom }}</td>
+                <td>{{ demande.demandeDescription }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demandes_show', { 'id': demande.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('demandes_edit', { 'id': demande.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandes_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+ 
+		
+			
+{% endblock %}

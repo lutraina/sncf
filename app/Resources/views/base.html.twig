@@ -35,6 +35,13 @@
 
 		<!-- Main -->
 			<div id="main">
+			
+			{% block demandes_show %}
+			
+			
+		    {% endblock %}
+
+
 
 				<!-- One -->
 					<section id="one">
@@ -471,7 +478,19 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 	{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        	{% javascripts
+        		'%kernel.root_dir%/../vendor/components/jquery/jquery.js'
+        				'@SncfBundle/Resources/public/js/jquery.poptrox.min.js'
+                        '@SncfBundle/Resources/public/js/skel.min.js'
+                        '@SncfBundle/Resources/public/js/util.js'
+                        '@SncfBundle/Resources/public/js/main.js'
+        	%}
+                
+        	<script src="{{ asset_url }}"/></script>
+        	{% endjavascripts %}
+        {% endblock %}
+
 </html>
 
  
